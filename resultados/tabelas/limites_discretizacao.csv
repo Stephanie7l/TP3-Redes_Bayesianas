@@ -1,0 +1,6 @@
+﻿variavel,minimo_treino,quantil_1_3,quantil_2_3,maximo_treino,regra
+age,15.0,16.0,17.0,22.0,baixa <= q1; media > q1 e <= q2; alta > q2
+absences,0.0,0.0,4.0,32.0,baixa <= q1; media > q1 e <= q2; alta > q2
+G1,0.0,10.0,12.0,18.0,baixa <= q1; media > q1 e <= q2; alta > q2
+G2,0.0,10.0,13.0,19.0,baixa <= q1; media > q1 e <= q2; alta > q2
+G3,0.0,11.0,13.0,19.0,baixa <= q1; media > q1 e <= q2; alta > q2

@@ -1,0 +1,536 @@
+{
+  "preprocessamento": {
+    "n_total": 649,
+    "n_treino": 519,
+    "n_teste": 130,
+    "faltantes": {
+      "age": 0,
+      "Medu": 0,
+      "studytime": 0,
+      "failures": 0,
+      "schoolsup": 0,
+      "higher": 0,
+      "absences": 0,
+      "G1": 0,
+      "G2": 0,
+      "G3": 0
+    },
+    "duplicatas_selecionadas": 9,
+    "duplicatas_completas": 0,
+    "cortes": {
+      "age": [
+        15.0,
+        16.0,
+        17.0,
+        22.0
+      ],
+      "absences": [
+        0.0,
+        0.0,
+        4.0,
+        32.0
+      ],
+      "G1": [
+        0.0,
+        10.0,
+        12.0,
+        18.0
+      ],
+      "G2": [
+        0.0,
+        10.0,
+        13.0,
+        19.0
+      ],
+      "G3": [
+        0.0,
+        11.0,
+        13.0,
+        19.0
+      ]
+    },
+    "preenchimento": {
+      "age": "17.0",
+      "Medu": "2",
+      "studytime": "2",
+      "failures": "0",
+      "schoolsup": "no",
+      "higher": "yes",
+      "absences": "2.0",
+      "G1": "11.0",
+      "G2": "11.0",
+      "G3": "12.0"
+    },
+    "estados": {
+      "age": [
+        "baixa",
+        "media",
+        "alta"
+      ],
+      "Medu": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "studytime": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "failures": [
+        "nenhuma",
+        "uma_ou_mais"
+      ],
+      "schoolsup": [
+        "no",
+        "yes"
+      ],
+      "higher": [
+        "no",
+        "yes"
+      ],
+      "absences": [
+        "baixa",
+        "media",
+        "alta"
+      ],
+      "G1": [
+        "baixa",
+        "media",
+        "alta"
+      ],
+      "G2": [
+        "baixa",
+        "media",
+        "alta"
+      ],
+      "G3": [
+        "baixa",
+        "media",
+        "alta"
+      ]
+    }
+  },
+  "comparacao": [
+    {
+      "metodo": "Hill-Climbing",
+      "bic_treino": -4118.115182408986,
+      "arestas": 8,
+      "parametros_livres": 46
+    },
+    {
+      "metodo": "Chow-Liu",
+      "bic_treino": -4127.248543897637,
+      "arestas": 9,
+      "parametros_livres": 54
+    }
+  ],
+  "modelo_escolhido": "Hill-Climbing",
+  "arestas": {
+    "Hill-Climbing": [
+      [
+        "G1",
+        "failures"
+      ],
+      [
+        "G1",
+        "higher"
+      ],
+      [
+        "G2",
+        "G1"
+      ],
+      [
+        "G3",
+        "G2"
+      ],
+      [
+        "G3",
+        "schoolsup"
+      ],
+      [
+        "failures",
+        "Medu"
+      ],
+      [
+        "failures",
+        "age"
+      ],
+      [
+        "studytime",
+        "G3"
+      ]
+    ],
+    "Chow-Liu": [
+      [
+        "G1",
+        "failures"
+      ],
+      [
+        "G1",
+        "higher"
+      ],
+      [
+        "G2",
+        "G1"
+      ],
+      [
+        "G2",
+        "Medu"
+      ],
+      [
+        "G3",
+        "G2"
+      ],
+      [
+        "G3",
+        "schoolsup"
+      ],
+      [
+        "G3",
+        "studytime"
+      ],
+      [
+        "age",
+        "absences"
+      ],
+      [
+        "failures",
+        "age"
+      ]
+    ]
+  },
+  "comparacao_manual": {
+    "Hill-Climbing": {
+      "mesma_direcao": [],
+      "invertidas": [
+        [
+          "G1",
+          "G2"
+        ],
+        [
+          "G2",
+          "G3"
+        ],
+        [
+          "age",
+          "failures"
+        ],
+        [
+          "failures",
+          "G1"
+        ]
+      ],
+      "ausentes": [
+        [
+          "G1",
+          "schoolsup"
+        ],
+        [
+          "G1",
+          "studytime"
+        ],
+        [
+          "G3",
+          "absences"
+        ],
+        [
+          "Medu",
+          "higher"
+        ],
+        [
+          "higher",
+          "studytime"
+        ]
+      ],
+      "novas": [
+        [
+          "G1",
+          "higher"
+        ],
+        [
+          "G3",
+          "schoolsup"
+        ],
+        [
+          "G3",
+          "studytime"
+        ],
+        [
+          "Medu",
+          "failures"
+        ]
+      ],
+      "jaccard_esqueleto": 0.3076923076923077
+    },
+    "Chow-Liu": {
+      "mesma_direcao": [],
+      "invertidas": [
+        [
+          "G1",
+          "G2"
+        ],
+        [
+          "G2",
+          "G3"
+        ],
+        [
+          "age",
+          "failures"
+        ],
+        [
+          "failures",
+          "G1"
+        ]
+      ],
+      "ausentes": [
+        [
+          "G1",
+          "schoolsup"
+        ],
+        [
+          "G1",
+          "studytime"
+        ],
+        [
+          "G3",
+          "absences"
+        ],
+        [
+          "Medu",
+          "higher"
+        ],
+        [
+          "higher",
+          "studytime"
+        ]
+      ],
+      "novas": [
+        [
+          "G1",
+          "higher"
+        ],
+        [
+          "G2",
+          "Medu"
+        ],
+        [
+          "G3",
+          "schoolsup"
+        ],
+        [
+          "G3",
+          "studytime"
+        ],
+        [
+          "absences",
+          "age"
+        ]
+      ],
+      "jaccard_esqueleto": 0.2857142857142857
+    }
+  },
+  "consultas": [
+    {
+      "cenario": "Sem evidência",
+      "evidencia": {},
+      "n_treino_evidencia": 519,
+      "baixa": 0.4688295165394402,
+      "media": 0.24173027989821882,
+      "alta": 0.28944020356234096
+    },
+    {
+      "cenario": "G2 baixa",
+      "evidencia": {
+        "G2": "baixa"
+      },
+      "n_treino_evidencia": 192,
+      "baixa": 0.9787722317842801,
+      "media": 0.013195639701663795,
+      "alta": 0.008032128514056222
+    },
+    {
+      "cenario": "G2 alta",
+      "evidencia": {
+        "G2": "alta"
+      },
+      "n_treino_evidencia": 116,
+      "baixa": 0.004721435316336169,
+      "media": 0.030217186024551465,
+      "alta": 0.9650613786591123
+    },
+    {
+      "cenario": "G2 baixa e reprovações",
+      "evidencia": {
+        "G2": "baixa",
+        "failures": "uma_ou_mais"
+      },
+      "n_treino_evidencia": 69,
+      "baixa": 0.9787722317842801,
+      "media": 0.013195639701663795,
+      "alta": 0.008032128514056222
+    },
+    {
+      "cenario": "Deseja graduação e estuda 5 a 10h",
+      "evidencia": {
+        "higher": "yes",
+        "studytime": "3"
+      },
+      "n_treino_evidencia": 70,
+      "baixa": 0.19719931048934689,
+      "media": 0.31461459780384743,
+      "alta": 0.4881860917068057
+    },
+    {
+      "cenario": "Faltas altas",
+      "evidencia": {
+        "absences": "alta"
+      },
+      "n_treino_evidencia": 146,
+      "baixa": 0.4688295165394402,
+      "media": 0.24173027989821882,
+      "alta": 0.28944020356234096
+    }
+  ],
+  "teste": [
+    {
+      "metodo": "Hill-Climbing",
+      "acuracia": 0.7769230769230769,
+      "log_loss": 0.49168947151565656
+    },
+    {
+      "metodo": "Chow-Liu",
+      "acuracia": 0.7769230769230769,
+      "log_loss": 0.4916894715156565
+    }
+  ],
+  "baseline": {
+    "acuracia": 0.43846153846153846,
+    "log_loss": 1.068614343445008
+  },
+  "caso": {
+    "indice_original": 78,
+    "evidencia": {
+      "age": "media",
+      "Medu": "2",
+      "studytime": "1",
+      "failures": "uma_ou_mais",
+      "schoolsup": "yes",
+      "higher": "no",
+      "absences": "baixa",
+      "G1": "baixa",
+      "G2": "baixa"
+    },
+    "G3_real": "baixa",
+    "posterior": {
+      "baixa": 0.9893620561216575,
+      "media": 0.00965507246057617,
+      "alta": 0.0009828714177665184
+    },
+    "markov_blanket": [
+      "G2",
+      "schoolsup",
+      "studytime"
+    ],
+    "posterior_mb": {
+      "baixa": 0.9893620561216575,
+      "media": 0.00965507246057617,
+      "alta": 0.0009828714177665184
+    },
+    "sensibilidade": [
+      {
+        "variavel": "G2",
+        "observado": "baixa",
+        "p_baixa_sem": 0.8837217630775531,
+        "p_baixa_com": 0.9893620561216575,
+        "diferenca_pp": 10.564029304410438
+      },
+      {
+        "variavel": "studytime",
+        "observado": "1",
+        "p_baixa_sem": 0.9818494747587186,
+        "p_baixa_com": 0.9893620561216575,
+        "diferenca_pp": 0.7512581362938864
+      },
+      {
+        "variavel": "schoolsup",
+        "observado": "yes",
+        "p_baixa_sem": 0.9886506939170094,
+        "p_baixa_com": 0.9893620561216575,
+        "diferenca_pp": 0.07113622046480694
+      },
+      {
+        "variavel": "age",
+        "observado": "media",
+        "p_baixa_sem": 0.9893620561216575,
+        "p_baixa_com": 0.9893620561216575,
+        "diferenca_pp": 0.0
+      },
+      {
+        "variavel": "Medu",
+        "observado": "2",
+        "p_baixa_sem": 0.9893620561216575,
+        "p_baixa_com": 0.9893620561216575,
+        "diferenca_pp": 0.0
+      },
+      {
+        "variavel": "failures",
+        "observado": "uma_ou_mais",
+        "p_baixa_sem": 0.9893620561216575,
+        "p_baixa_com": 0.9893620561216575,
+        "diferenca_pp": 0.0
+      },
+      {
+        "variavel": "higher",
+        "observado": "no",
+        "p_baixa_sem": 0.9893620561216575,
+        "p_baixa_com": 0.9893620561216575,
+        "diferenca_pp": 0.0
+      },
+      {
+        "variavel": "absences",
+        "observado": "baixa",
+        "p_baixa_sem": 0.9893620561216575,
+        "p_baixa_com": 0.9893620561216575,
+        "diferenca_pp": 0.0
+      },
+      {
+        "variavel": "G1",
+        "observado": "baixa",
+        "p_baixa_sem": 0.9893620561216575,
+        "p_baixa_com": 0.9893620561216575,
+        "diferenca_pp": 0.0
+      }
+    ],
+    "alternativas_G2": {
+      "baixa": {
+        "baixa": 0.9893620561216575,
+        "media": 0.00965507246057617,
+        "alta": 0.0009828714177665184
+      },
+      "media": {
+        "baixa": 0.37729855595700107,
+        "media": 0.5926473609183021,
+        "alta": 0.03005408312469686
+      },
+      "alta": {
+        "baixa": 0.03291978791906779,
+        "media": 0.15250654438544228,
+        "alta": 0.8145736676954899
+      }
+    }
+  },
+  "ambiente": {
+    "python": "3.13.15",
+    "pgmpy": "1.0.0",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "networkx": "3.4.2",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.10.8"
+  },
+  "sha256_dados": "a7594a11d7771c0efe1a740824e0e833da9c4cad07c39a9766a874575563fb3f"
+}
